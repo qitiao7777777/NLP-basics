@@ -1,0 +1,8 @@
+from keras.preprocessing import sequence
+cutlen=10#这个cutlen是根据句子中长度来决定的，占了大概90%语料的最短长度
+def padding(X_train):
+    return sequence.pad_sequences(x_train,cutlen)
+ x_train=[[1,2,3,4,5,6,7,8,9,10,11],[1,1,1,1,1]]
+ res=padding(x_train)
+ print(res)
+ #输出结果[[2,3,4,5,6,7,8,9,10,11],[0,0,0,0,0,1,1,1,1,1]
