@@ -1,0 +1,8 @@
+ngram_range=2
+def create_ngram_set(input_list):
+    #zip()函数是两个数组进行配对【1，2，3】，【4，5，6】用后【1，4】【2，5】【3，6】
+    #set()函数是去重复的数组
+    return set(zip(*[input_list[i:] for i in range(ngram_range)]))
+input_list=[1,2,3,4,5,6,7]
+res=create_ngram_set(input_list)
+print(res)
